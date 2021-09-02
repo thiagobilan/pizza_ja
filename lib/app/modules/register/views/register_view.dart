@@ -40,9 +40,7 @@ class RegisterView extends GetView<RegisterController> {
                         controller: nameEditingController,
                         label: 'Nome',
                         validator: (value) {
-                          if (value == null ||
-                              value.isEmpty ||
-                              !value.isEmail) {
+                          if (value == null || value.isEmpty) {
                             return 'Nome inválido';
                           }
                           return null;
@@ -84,7 +82,7 @@ class RegisterView extends GetView<RegisterController> {
                           obscureText: controller.obscureTextConfirmPassword,
                           validator: (String? value) {
                             // ignore: unrelated_type_equality_checks
-                            if (value != passwordEditingController.value) {
+                            if (value != passwordEditingController.text) {
                               return 'Senha e Confirmar Senha são diferentes.';
                             }
                             return null;
@@ -107,7 +105,12 @@ class RegisterView extends GetView<RegisterController> {
                         labelColor: Colors.white,
                         labelSize: 20,
                         onPressed: () {
-                          if (formKey.currentState!.validate()) {}
+                          if (formKey.currentState!.validate()) {
+                            controller.registerUser(
+                                nameEditingController.text,
+                                emailEditingController.text,
+                                passwordEditingController.text);
+                          }
                         },
                       ),
                       SizedBox(
@@ -119,7 +122,7 @@ class RegisterView extends GetView<RegisterController> {
                         label: 'Voltar',
                         labelColor: Colors.black,
                         labelSize: 20,
-                        // onPressed: () {},
+                        onPressed: () => Get.back(),
                       ),
                     ],
                   ),

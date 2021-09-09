@@ -7,13 +7,14 @@ environment:
 
 dependencies:
   cupertino_icons: ^1.0.2
+  flutter:
+    sdk: flutter
   fluttericon: ^2.0.0
+  get: 4.3.8
+  group_radio_button: ^1.1.0
   intl: ^0.17.0
   modal_bottom_sheet: ^2.0.0
   shared_preferences: ^2.0.7
-  get: 4.3.8
-  flutter:
-    sdk: flutter
 
 dev_dependencies:
   flutter_test:

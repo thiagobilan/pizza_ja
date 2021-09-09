@@ -5,6 +5,8 @@ import 'package:pizza_ja/app/modules/home/views/home_view.dart';
 import 'package:pizza_ja/app/modules/login/bindings/login_binding.dart';
 import 'package:pizza_ja/app/modules/login/views/login_view.dart';
 import 'package:pizza_ja/app/modules/menu/views/menu_view.dart';
+import 'package:pizza_ja/app/modules/orders/bindings/orders_binding.dart';
+import 'package:pizza_ja/app/modules/orders/views/orders_view.dart';
 import 'package:pizza_ja/app/modules/register/bindings/register_binding.dart';
 import 'package:pizza_ja/app/modules/register/views/register_view.dart';
 import 'package:pizza_ja/app/modules/splash/bindings/splash_binding.dart';
@@ -43,6 +45,11 @@ class AppPages {
       page: () => MenuView(
         pizzaSize: Get.arguments,
       ),
+    ),
+    GetPage(
+      name: _Paths.ORDERS_PAGE,
+      page: () => OrdersView(),
+      binding: OrdersPageBinding(),
     ),
   ];
 }

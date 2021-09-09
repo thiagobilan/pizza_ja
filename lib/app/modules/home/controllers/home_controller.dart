@@ -11,7 +11,8 @@ class HomeController extends GetxController {
     Get.put(MenuController(Get.find()));
     print('Abrindo Tela');
     await showBarModalBottomSheet(
-      enableDrag: false,
+      // enableDrag: false,
+      isDismissible: false,
       context: Get.context!,
       builder: (context) {
         return MenuView(

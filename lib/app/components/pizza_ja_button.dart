@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class PizzaJaButton extends StatelessWidget {
-  final double width;
-  final double height;
+  final double? width;
+  final double? height;
   final Color? buttonColor;
   final String label;
   final TextStyle? style;
@@ -13,8 +13,8 @@ class PizzaJaButton extends StatelessWidget {
 
   const PizzaJaButton({
     Key? key,
-    required this.width,
-    required this.height,
+    this.width,
+    this.height,
     this.buttonColor,
     required this.label,
     this.style,

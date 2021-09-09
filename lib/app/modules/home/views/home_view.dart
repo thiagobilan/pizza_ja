@@ -7,10 +7,11 @@ import 'package:pizza_ja/app/modules/home/widgets/home_header.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
+  static const int NAVIGATION_BAR_INDEX = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: PizzaJaBottomNavigation(),
+      bottomNavigationBar: PizzaJaBottomNavigation(NAVIGATION_BAR_INDEX),
       body: Column(
         children: [
           HomeHeader(),
